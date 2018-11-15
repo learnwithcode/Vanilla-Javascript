@@ -38,7 +38,7 @@
                   <input type="text" name="task" id="task">
                   <label for="task">New Task</label>
                 </div>
-                <input type="submit" value="Add Task" class="btn">
+                <input type="submit" value="Add Task" class="btn" id="taskAdd">
               </form>
             </div>
           </div>
@@ -61,7 +61,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script src="task.js"></script>
   <script>
+    $(document).ready(function () {
+
       // JAVASCRIPT START HERE //
+      $('#taskAdd').click(function () {
+        Materialize.toast('Task Add !', 3000)
+      })
+
+      // remove all toasts
+      setTimeout(function () {
+        Materialize.Toast.removeAll()
+      }, 3000)
+    });
 
   </script>
 </body>
